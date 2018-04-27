@@ -12,7 +12,9 @@
        placeholder="Email">
 
        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
-         username is required
+          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.minlength">Username should contain min {{username.errors.minlength.requiredLength}}</div>
+          <div *ngIf="username.errors.minlength">Username should contain max</div>
        </div>
 
     </div>
